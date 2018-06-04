@@ -1,4 +1,4 @@
-# Go and Angular 6 REST API Example
+# Go and Angular 6 REST API Example  (Working Process)
 A RESTful API example for simple todo application with Go and Angular 6
 
 It is a just simple tutorial or example for making simple RESTful API with Go using **gorilla/mux** (A nice mux library) and **gorm** (An ORM for Go)
@@ -26,9 +26,9 @@ func GetConfig() *Config {
 
 ```bash
 # Build and Run
-cd go-todo-rest-api-example
+cd GoAngular
 go build
-./go-todo-rest-api-example
+./GoAngular
 
 # API Endpoint : http://127.0.0.1:3000
 ```
@@ -78,10 +78,11 @@ go build
 
 ## Todo
 
-- [x] Support basic REST APIs.
+- [x] Organize the code with packages
+- [ ] Angular Project
+- [ ] Support basic REST APIs.
 - [ ] Support Authentication with user for securing the APIs.
 - [ ] Make convenient wrappers for creating API handlers.
 - [ ] Write the tests for all APIs.
-- [x] Organize the code with packages
 - [ ] Make docs with GoDoc
 - [ ] Building a deployment process 
