@@ -1,7 +1,6 @@
 package app
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
@@ -20,13 +19,14 @@ type App struct {
 
 // Initialize initializes the app with predefined configuration
 func (a *App) Initialize(config *config.Config) {
-	dbURI := fmt.Sprintf("%s:%s@/%s?charset=%s&parseTime=True",
-		config.DB.Username,
-		config.DB.Password,
-		config.DB.Name,
-		config.DB.Charset)
+	// dbURI := fmt.Sprintf("%s:%s@/%s?charset=%s&parseTime=True",
+	// 	config.DB.Username,
+	// 	config.DB.Password,
+	// 	config.DB.Name,
+	// 	//config.DB.Charset
+	// )
 
-	db, err := gorm.Open(config.DB.Dialect, dbURI)
+	db, err := gorm.Open(config.DB.Dialect, "sqlserver://lend_usr:laps@123@192.168.0.216:1433?database=LEND_STREET")
 	if err != nil {
 		log.Fatal("Could not connect database")
 	}
