@@ -79,7 +79,7 @@ go build
 ## Todo
 
 - [x] Organize the code with packages
-- [ ] Angular Project
+- [x] Angular Project
 - [ ] Support basic REST APIs.
 - [ ] Support Authentication with user for securing the APIs.
 - [ ] Make convenient wrappers for creating API handlers.
