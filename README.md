@@ -1,4 +1,4 @@
-# Go and Angular 6 REST API Example  (Working Process)
+# Go and Angular 6 REST API Example  (Working In Process)
 A RESTful API example for simple todo application with Go and Angular 6
 
 It is a just simple tutorial or example for making simple RESTful API with Go using **gorilla/mux** (A nice mux library) and **gorm** (An ORM for Go)
