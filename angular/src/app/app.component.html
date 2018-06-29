@@ -1,20 +1,85 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container">
+  <h3>Employee Management System</h3>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add Employee
+  </button>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of arrValue">
+        <td>{{employee.fname}}</td>
+        <td>{{employee.lname}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.phone}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add Employee</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="container">
+          <form #empform="ngForm" (ngSubmit)="onAddEmp(empform.value)">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" class="form-control" id="fname" required placeholder="Enter First Name" name="fname" ngModel
+              >
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" class="form-control" id="lname" required placeholder="Enter Last Name" name="lname" ngModel>
+            </div>
+            <fieldset class="form-group">
+              <legend>Gender</legend>
+              <div class="form-check">
+                <label class="form-check-label">
+                  Male
+                  <input type="radio" class="form-control" required id="gen" name="gender" ngModel value="Male">
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  Female
+                  <input type="radio" class="form-control" required id="gen" name="gender" ngModel value="FeMale">
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="form-group">
+              <label for="mail">Email</label>
+              <input type="email" class="form-control" id="mail" required ngModel placeholder="Enter Email" name="email">
+            </div>
+            <div class="form-group">
+              <label for="phn">Phone</label>
+              <input type="number" class="form-control" id="phn" required ngModel placeholder="Enter Phone" name="phone">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
