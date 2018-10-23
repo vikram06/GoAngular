@@ -80,7 +80,7 @@ go build
 
 - [x] Organize the code with packages
 - [x] Angular Project
-- [ ] Support basic REST APIs.
+- [x] Support basic REST APIs. (GOLANG)
 - [ ] Support Authentication with user for securing the APIs.
 - [ ] Make convenient wrappers for creating API handlers.
 - [ ] Write the tests for all APIs.
